@@ -1,0 +1,371 @@
+body {
+    padding: 0;
+    margin: 0;
+
+    background-color: #403029;
+}
+
+.pinguim {
+    --pinguin-skin: black;
+    --pinguin-beak: orange;
+
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+.right-cheek, .left-cheek {
+    top: 15%;
+    background-color: white;
+    width: 60%;
+    height: 70%;
+    border-radius: 70% 70% 60% 60%;
+}
+
+.right-cheek{
+    left: 35%;
+}
+
+.left-cheek{
+    left: 5%;    
+}
+
+.belly {
+    top: 60%;
+    left: 2.5%;
+    background-color: white;
+    width: 95%;
+    height: 100%;
+    border-radius: 120% 120% 100% 100%;
+}
+
+.pinguim-top {
+    top: 10%;
+    left: 25%;
+    background-color: var(--pinguin-skin, black);
+    width: 50%;
+    height: 45%;
+    border-radius: 70% 70% 60% 60%;
+}
+
+.pinguim-bottom {
+    top: 40%;
+    left: 23.5%;
+    background-color: var(--pinguin-skin, black);
+    width: 53%;
+    height: 45%;
+    border-radius: 70% 70% 100% 100%;
+}
+
+.right-hand, .left-hand {
+    top: 0%;
+    background-color: var(--pinguin-skin, black);
+    width: 30%;
+    height: 60%;
+    z-index: -1;
+}
+
+.right-hand {
+    left: -10%;
+    border-radius: 30% 30% 120% 30%;
+    transform: rotate(45deg);
+}
+
+
+.left-hand {
+    left: 80%;
+    border-radius: 30% 120% 30% 30%;
+    transform: rotate(50deg);
+    animation-name: handshake;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+}
+
+.right-feet, .left-feet {
+    top: 85%;
+    background-color: var(--pinguin-beak, orange);
+    width: 15%;
+    height: 30%;
+    border-radius:  50% 50% 50% 50%;
+    z-index: -1;
+}
+
+
+@keyframes handshake {
+    0% {transform: rotate(50deg);}
+    50% {transform: rotate(90deg);}
+    100% {transform: rotate(50deg);}
+
+}
+
+
+.right-feet {
+    left: 60%;
+    transform: rotate(-80deg);
+}
+
+.left-feet {
+    left: 25%;
+    transform: rotate(80deg);
+}
+
+
+.right-eye, .left-eye {
+    top: 45%;
+    background-color: black;
+    width: 15%;
+    height: 17%;
+    border-radius: 50%;
+}
+
+.right-eye {left: 60%;}
+.left-eye {left: 25%;}
+
+.sparkle {
+    top: 25%;
+    left: 15%;
+    background-color: white;
+    width: 35%;
+    height: 35%;
+    border-radius: 50%;
+}
+
+.beak-top {
+    top: 65%;
+    left: 40%;
+    background: var(--penguin-beak, orange);
+    width: 20%;
+    height: 10%;
+    border-radius: 50%;
+}
+
+
+.pinguim * {
+    position: absolute;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-color: brown;
+    width: 100vw;
+    padding: 10px;
+    z-index: 1;
+}
+
+.link {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: wheat;
+    text-decoration: underline;
+}
+
+#welcome-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+}
+
+#welcome-section h1,p{
+    margin: 0;
+}
+ 
+#welcome-section h1 {
+    font-size: 1.5rem;
+}
+
+#welcome-section p {
+    font-size: 0.75rem;
+    color: orange;
+}
+
+#projects {
+    padding: 15px;
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.project-list {
+    width: 90%
+}
+
+.project-tile {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.project-link {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.project-link img {
+    display: block;
+}
+
+.project-title{
+    display: block;
+    padding: 20px;
+    font-size: 1.25em;
+    background-color: #123E59;
+}
+
+.hover{
+    font-weight: bolder;
+    opacity: 0;
+    color: brown;
+}
+
+.project-link:hover .hover{
+    animation-name: code;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes code {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100;
+    }
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+}
+
+.contacts a {
+    color:white;
+    text-decoration: none;
+    font-size: 1.1em;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+footer {
+    border-top: solid 3px brown;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+@media only screen and (min-width: 768px) {
+    
+    #navbar{
+        padding: 20px;
+    }
+
+    .link {
+        font-size: 2rem;
+    }
+
+    .pinguim {
+        width: 200px;
+        height: 200px;
+    }
+
+    #welcome-section h1 {
+        font-size: 3.5rem;
+    }
+    
+    #welcome-section p {
+        font-size: 1.25rem
+    }
+    
+
+    #projects h2 {
+        font-size: 3rem;
+    }
+
+    .project-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .project-tile {
+        width: 400px;
+    }
+
+    .project-tile img {
+        height: 250px;
+    }
+
+    #contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 75vh;
+    }
+
+    #contact h2 {
+        font-size: 3rem;
+        margin: 0;
+    }
+    
+    .contacts {
+        flex-direction:  row;
+        flex-wrap: wrap;
+    }
+
+    .contacts a {
+        margin-bottom: 0;
+        margin-left: 10px;
+        font-size: 1.5rem;
+    }
+
+    .contacts a:hover {
+        animation-name: move-bottom;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes move-bottom {
+    
+        0% {
+            top: 0px;
+        }
+    
+        100% {
+            top: 5px
+        }
+    }   
+}
